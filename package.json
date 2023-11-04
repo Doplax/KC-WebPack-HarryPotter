@@ -1,0 +1,15 @@
+{
+  "name": "kc-webpack-harrypotter",
+  "version": "1.0.0",
+  "description": "Proyecto del módulo de Frontend PRO del Bootcamp de Web de KeepCoding.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
