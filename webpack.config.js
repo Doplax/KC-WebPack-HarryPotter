@@ -1,8 +1,8 @@
 module.exports = {
     entry: {
-        home: './src/homePage.js',
-        teams: './src/teamsPage.js', 
-        contact: './src/contactPage.js'
+        home: './src/homePage.ts',
+        teams: './src/teamsPage.ts', 
+        contact: './src/contactPage.ts'
     },
     mode: 'development',
     devtool: 'inline-source-map', // Nos dice en que archivo y en que linea
@@ -12,10 +12,18 @@ module.exports = {
         clean: true,// clean: Limpiara el directorio antes de manipularlo
     },
     module: {
+        resolve: {
+            extensions: ['.tsx', '.ts', '.js'],
+          },
         rules: [{
             test: /\.css$/i,// 
             use: ['style-loader','css-loader'],// <- style los intrpreta y loader los carga
-        }]
+        },
+        {
+            test: /\.ts?$/,
+            use: 'ts-loader',
+            exclude: /node_modules/,
+          },]
     }
 }
 
