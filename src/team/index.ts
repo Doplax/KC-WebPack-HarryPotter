@@ -1,6 +1,6 @@
 'use strict';
-import { getCharacters } from './api.js';
-import { renderCharacters } from './view.js';
+import { getCharacters } from './api';
+import { renderCharacters } from './view';
 
 const HOUSES = [
     'gryffindor',
@@ -12,8 +12,8 @@ const HOUSES = [
 function loadCharacters() {
     HOUSES.forEach(house => {
         getCharacters(house)
-            .then(data => {
-                renderCharacters(house, data.filter(i => i.image).slice(0, 8));
+            .then((data:{ image:string, name:string}[]) => {
+                renderCharacters(house, data.filter((i) => i.image).slice(0, 8));
             });
     });
 }

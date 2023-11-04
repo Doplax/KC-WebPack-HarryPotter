@@ -12,9 +12,6 @@ module.exports = {
         clean: true,// clean: Limpiara el directorio antes de manipularlo
     },
     module: {
-        resolve: {
-            extensions: ['.tsx', '.ts', '.js'],
-          },
         rules: [{
             test: /\.css$/i,// 
             use: ['style-loader','css-loader'],// <- style los intrpreta y loader los carga
@@ -24,6 +21,9 @@ module.exports = {
             use: 'ts-loader',
             exclude: /node_modules/,
           },]
-    }
+    },
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js'],
+      },
 }
 

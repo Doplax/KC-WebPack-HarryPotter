@@ -7,7 +7,7 @@ const checkValidations = [
     'valueMissing',
   ];
   
-  const errorMessages = {
+  const errorMessages: { [key: string]: string} = {
     patternMismatch: 'Error en el patón definido',
     stepMismatch: 'Valor númerico en un intervalo incorrecto',
     tooLong: 'Valor demasiado largo',
@@ -16,7 +16,7 @@ const checkValidations = [
     valueMissing: 'Campo requirido',
   };
   
-  export const getErrorMessages = (validateState) => {
+  export const getErrorMessages = (validateState: { [key: string]: string}) => { // Espera una key de tipo string con un valor de tipo string
     if (validateState.valid) return '';
     return checkValidations.reduce((acum, validateStateKeys) => {
       if (validateState[validateStateKeys]) {

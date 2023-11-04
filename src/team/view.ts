@@ -1,6 +1,6 @@
 'use strict';
 
-export function renderCharacters(house, characters) {
+export function renderCharacters(house:string, characters:{ image:string, name:string}[]) {
     const houseElement = document.getElementById(house);
     const charactersList = document.createElement('div');
     charactersList.classList.add('charactersList');
